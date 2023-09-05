@@ -1,0 +1,200 @@
+package com.assignment;
+import java.sql.*;
+import java.util.*;
+
+
+public class UserAuth 
+{
+	private Connection con;
+	private PreparedStatement stat;
+	private User1 loggedInUser;
+    private Scanner sc;
+    
+    public  UserAuth()
+    {
+    	sc = new Scanner(System.in);
+    	try
+		{
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		con=DriverManager.getConnection("jdbc:mysql://localhost:3306/user","Milan","root");
+		System.out.println("Data connected");
+		}
+		catch(ClassNotFoundException ex)
+		{
+			System.out.println("unable to find driver");
+		}
+		catch(SQLException ex)
+		{
+			System.out.println("Excepiton is "+ex.getMessage());
+		}
+    }
+    public void loginUser() 
+    {
+    	System.out.println("Enter the User Name where use");
+    	int userid = sc.nextInt();
+    	System.out.println("Enter the password :");
+    	String pass = sc.next();
+    	try
+    	{
+    	stat=con.prepareStatement("select * from user where userid=? and password=?");
+    	stat.setInt(1, userid);
+    	stat.setString(2, pass);
+    	ResultSet result=stat.executeQuery();
+    	if(result.next())
+		
+      	  {
+    		
+    		System.out.println("Sucessfully Logged in....");
+    	  }
+    	  else 
+    	  {
+    		  System.out.println("User Not Found....");
+		  }
+    	}
+    	catch(Exception ex)
+    	{
+    		System.out.println(ex.getMessage());
+    	}
+    		
+     }
+    public void showMainMenu() 
+    {
+        while (true) 
+        {
+            System.out.println("Options:");
+            System.out.println("1. Insert");
+            System.out.println("2.  Delete");
+            System.out.println("3.  Update");
+            System.out.println("4.  Retreive");
+            System.out.println("5.  Exit");
+
+            System.out.print("Enter option: ");
+            int option = sc.nextInt();
+            sc.nextLine();  
+
+            switch (option)
+            {
+                case 1:
+                    insert();
+                    break;
+                case 2:
+                	delete();
+                    break;
+                case 3:
+                	update();
+                    break;
+                case 4:
+                	retreive();
+                    break;
+                case 5:
+                    System.out.println("Exiting...");
+                    return;
+                default:
+                    System.out.println("Invalid option.");
+            }
+         }
+     }
+    public void insert()
+	{
+		try
+		{
+		
+		stat=con.prepareStatement("insert into employee values(?,?,?,?)");
+		System.out.println("Enter user id ");
+		int userid=sc.nextInt();
+		System.out.println("Enter User name ");
+		String name=sc.next();
+		System.out.println("Enter Address ");
+		String address=sc.next();
+		System.out.println("Enter Department code ");
+		String deptcode=sc.next();
+		stat.setInt(1,userid);
+		stat.setString(2,name);
+		stat.setString(3, address);
+		stat.setString(4, deptcode);
+		int result=stat.executeUpdate();
+		if(result>0)
+		{
+			System.out.println("inserted");
+		}
+		}
+		catch(Exception ex)
+		{
+			System.out.println(ex.getMessage());
+		}
+		
+	}
+	public void delete() {
+		try {
+			System.out.println("Enter user id want to delete");
+			int userid=sc.nextInt();
+			stat=con.prepareStatement("delete from user where userid=?");
+			stat.setInt(1, userid);
+			int result=stat.executeUpdate();
+			if(result>0)
+			{
+				System.out.println("Deleted");
+			}
+			}
+			catch(Exception ex)
+			{
+				System.out.println(ex.getMessage());
+			}
+			
+		
+		}
+	
+	
+	
+	
+	public void update() {
+		try {
+			System.out.println("Enter user id want to update");
+			int userid=sc.nextInt();
+			System.out.println("Enter new address");
+			String add=sc.next();
+			stat=con.prepareStatement("update user set address=? where userid=?");
+			stat.setString(1,add);
+			stat.setInt(2, userid);
+			int result=stat.executeUpdate();
+			if(result>0)
+			{
+				System.out.println("Deleted");
+			}
+			}
+			catch(Exception ex)
+			{
+				System.out.println(ex.getMessage());
+			}
+			
+		
+		}
+	public void retreive() {
+		try {
+			stat=con.prepareStatement("select * from user");
+			ResultSet result=stat.executeQuery();
+			while(result.next())
+			{
+				System.out.println("User id"+result.getInt(1));
+				System.out.println("User name is"+result.getString(2));
+			}
+			
+		}
+		catch(Exception ex){
+			System.out.println(ex.getMessage());
+		}
+	}
+	
+  public static void main(String[] args) {
+	UserAuth ua=new UserAuth();
+	
+	 ua.loginUser();
+	 ua.showMainMenu();
+	 ua.insert();
+	 ua.delete();
+	 ua.update();
+	 ua.retreive();
+ }
+
+}
+ 

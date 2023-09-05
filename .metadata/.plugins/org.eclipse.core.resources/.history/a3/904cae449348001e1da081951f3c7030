@@ -1,0 +1,9 @@
+package mypackage.demo1;
+
+public class CalculatorTest {
+	public void add() {
+		Calculator c=new Calculator();
+		int result=c.add(5,3);
+	}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;connect&apos; to &apos;OnlineStoreAssignment3/src/dto&apos;&#x0D;&#x0A;- Original project: &apos;EMSData&apos;&#x0D;&#x0A;- Destination element: &apos;OnlineStoreAssignment3/src/dto&apos;&#x0D;&#x0A;- Original element: &apos;EMSData/src/connect&apos;" description="Copy package" destination="=OnlineStoreAssignment3/src&lt;dto" element1="/src&lt;connect" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1693562752817" version="1.0"/>
+</session>

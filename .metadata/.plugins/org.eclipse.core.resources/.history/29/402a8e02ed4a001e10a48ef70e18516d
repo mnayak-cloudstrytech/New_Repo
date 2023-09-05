@@ -1,0 +1,14 @@
+package com.spring.SpringCore;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class App 
+{
+    public static void main( String[] args )
+    {
+        ApplicationContext cont=new ClassPathXmlApplicationContext("beans.xml");
+        Student s1=(Student)cont.getBean("student1");
+        System.out.println("Student code is"+s1.getStudentid());
+    }
+}

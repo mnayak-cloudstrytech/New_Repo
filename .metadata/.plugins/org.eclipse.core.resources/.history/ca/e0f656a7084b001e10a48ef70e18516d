@@ -1,0 +1,5 @@
+package com.spring.SpringCoreDemo.annotation;
+
+public class Student {
+
+}

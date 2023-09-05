@@ -1,0 +1,19 @@
+package com.assignment;
+
+import java.util.Scanner;
+
+
+public class UserAuth {
+	private User1 loggedInUser;
+    private Scanner sc;
+    
+    public void UserAuth() {
+    	sc = new Scanner(System.in);
+    }
+    public void loginUser() {
+    	System.out.println("Enter the User Name");
+    	name=sc.next();
+    	System.out.println("Enter the password :");
+    	pass=sc.next();
+    }
+}

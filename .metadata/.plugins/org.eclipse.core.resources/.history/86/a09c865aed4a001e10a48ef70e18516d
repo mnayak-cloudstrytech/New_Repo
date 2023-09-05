@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+	<bean id="student1" class="com.spring.SpringCoreDemo.Student">
+	<property name="studentid" value="1"/>
+	<property name="studentname" value="Anaita"/>
+	<property name="score" value="90"/>
+	</bean>
+	
+	<bean id="student2" class="com.spring.SpringCoreDemo.Student">
+	<property name="studentid" value="2"/>
+	<property name="studentname" value="Harshita"/>
+	<property name="score" value="90"/>
+	</bean>
+	 
+	 <bean id="student3" class="com.spring.SpringCoreDemo.Student">
+	<property name="studentid" value="3"/>
+	<property name="studentname" value="Milan"/>
+	<property name="score" value="98"/>
+	</bean>
+	
+	
+	<!-- bean definitions here -->
+	<bean id="product1" class="com.spring.SpringCore1Demo.Product">
+	<property name="productid" value="1"/>
+	<property name="productname" value="potato"/>
+	<property name="price" value="38"/>
+	<property name="quantity" value="3"/>
+	</bean>
+	
+
+</beans>

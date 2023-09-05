@@ -1,0 +1,13 @@
+package mypackage.test;
+
+public class TestDemo {
+	public void test_demo() {
+		
+		@Test
+		System.out.println("Welcome To Junit");
+		String s1="Welcome to first test case";
+		assertEquals("Welcome to first test case");
+		
+	}
+
+}

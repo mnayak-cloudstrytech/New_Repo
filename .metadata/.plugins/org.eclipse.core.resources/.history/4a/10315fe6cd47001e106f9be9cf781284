@@ -1,0 +1,34 @@
+
+
+package mypackage;
+import java.sql.*;
+public class DataConnect {
+	private Connection con;
+	public DataConnect()
+	{
+		try
+		{
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		con=DriverManager.getConnection("jdbc:mysql://localhost:3306/classicmodels","root","mysql");
+		System.out.println("Data connected");
+		/*
+		 * jdbc--protocol
+		 * mysql-sub protocol
+		 * localhost-mysql is installed on current system and running on port number 3306
+		 * root-username
+		 * mysql-password
+		 */
+		}
+		catch(ClassNotFoundException ex)
+		{
+			System.out.println("unable to find driver");
+		}
+		catch(SQLException ex)
+		{
+			System.out.println("Excepiton is "+ex.getMessage());
+		}
+	}public static void main(String[] args) {
+		DataConnect d=new DataConnect();
+	}
+
+}

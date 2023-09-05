@@ -1,0 +1,15 @@
+INDEX VERSION 1.131
+D:\Eclipse Project\CoreJava\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3890693209.index
+\Expression_tag\src\main\java
+D:\Eclipse Project\CoreJava\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1858447197.index
+\Scriptlet_tag\src\main\java
+D:\Eclipse Project\CoreJava\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3453735851.index
+\webapp_demo\src\main\java
+D:\Eclipse Project\CoreJava\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4009528288.index
+\Declaration_tag\src\main\java
+D:\Eclipse Project\CoreJava\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4069018645.index
+\studentapp\src\main\java
+D:\Eclipse Project\CoreJava\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3482008867.index
+\web_app_5\src\main\java
+D:\Eclipse Project\CoreJava\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3648398940.index
+\Directive_tag\src\main\java

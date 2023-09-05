@@ -1,0 +1,12 @@
+package mypackage.demo;
+
+public class Greeting {
+	public String getGoodMorningMessage() {
+		return"Good Morning Everyone";
+	}
+	public String getBirthdayMessage() {
+		return "Happy Birthday";
+		
+	}
+
+}

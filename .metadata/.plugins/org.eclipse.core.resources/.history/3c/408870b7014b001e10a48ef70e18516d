@@ -1,0 +1,8 @@
+package com.spring.SpringCore;
+
+public class College {
+	private int collegecode;
+	private String collegename;
+	
+
+}
